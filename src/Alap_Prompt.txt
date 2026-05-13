@@ -1,0 +1,28 @@
+Prompt
+Írj egy JavaFX alkalmazást, amely egy Connect 4 (Amőba) játék fő belépési pontjaként (Connect4App) szolgál. A programnak egy komplex, programozott (nem FXML alapú) felhasználói felülettel kell rendelkeznie.
+
+Elvárt architektúra és függőségek:
+A kód használjon egy létező backend struktúrát az alábbi osztályokkal:
+GameManager: A játéklogika irányításáért felelős.
+DatabaseManager és GameRepository: Az adatok mentéséhez és statisztikák lekéréséhez.
+BoardView: Egy egyedi JavaFX komponens a játéktábla megjelenítéséhez.
+GameState és Player: Modell osztályok az állapotok kezeléséhez.
+
+UI Felépítés:
+Használj egy BorderPane elrendezést. A középső rész a BoardView, a jobb oldali rész pedig egy 260px széles VBox vezérlőpult.
+Vezérlőpult elemei:
+Cím és állapotjelző label (színkódolt üzenetekkel a Piros/Sárga játékosokhoz).
+Adatbázis állapota label és egy 'Újrapróbálkozás' gomb.
+Beviteli mező a játékos nevének.
+Legördülő menük (ComboBox): Játékmód (Human vs AI, Human vs Human, AI vs AI), Kezdő játékos (Piros, Sárga, Véletlen), és Nehézség (Minimax mélység 0-tól 10-ig).
+Számválasztók (Spinner): Oszlopok (4-7) és sorok (4-6) beállításához.
+Checkbox az AI logolás bekapcsolásához.
+Funkciógombok: 'Új játék', 'Mentés', 'Betöltés', 'AI léptetése' és 'Statisztikák'.
+Funkcionális elvárások:
+Interakció: A táblára kattintva a gameManager.playTurn(col) metódus hívódjon meg, de csak ha a név meg van adva, és az aktuális körben emberi játékos jön.
+Szálkezelés: Az AI lépéseit (playAITurn) külön szálon futtasd (Thread), hogy ne akadjon meg a UI, majd a Platform.runLater() segítségével frissítsd a felületet.
+Fájlkezelés: Használj FileChooser-t a játékállapot JSON-be való mentéséhez és betöltéséhez.
+Statisztika: Jeleníts meg egy Alert ablakot a játékos statisztikáival az adatbázisból lekérve.
+Validáció: Ha nincs megadva név az új játék indításakor, mutass figyelmeztető üzenetet.
+Tisztítás: Az alkalmazás bezárásakor (stop metódus) zárd le az adatbázis-kapcsolatot.
+A kódot magyar nyelvű feliratokkal és professzionális stílusban (szegélyek, paddingok, CSS-szerű formázás) készítsd el!

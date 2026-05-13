@@ -1,0 +1,15 @@
+Készíts egy JavaFX BoardView osztályt (a GridPane kiterjesztésével), amely egy Connect 4 játék vizuális megjelenítéséért felelős.
+1. UI Design:
+Alapstílus: Sötétzöld háttér, 10px margó, 5px távolság a cellák között (hgap, vgap).
+Cellák: Minden cella egy sötétebb zöld, 80x80-as, lekerekített sarkú téglalapból és egy benne lévő körből álljon.
+Körök: A korongok alaphelyzetben fehérek legyenek. A körnek pontosan a téglalap közepén kell elhelyezkednie.
+2. Funkcionalitás:
+rebuildBoard(rows, cols) Metódus a tábla teljes újraépítéséhez. Tárolja a köröket egy Circle[][] tömbben a gyors eléréshez.
+update(Board board): Metódus a színek frissítéséhez.
+Ha a logikai táblán a játékos RED, a kör színe legyen piros.
+Ha YELLOW, akkor sárga.
+Ha üres, akkor maradjon fehér.
+Biztonság: Ha az update hívásakor a tábla mérete eltér a jelenlegi UI-tól, automatikusan hívja meg a rebuildBoard metódust.
+3. Elvárt kódminőség:
+Tiszta, olvasható Java kód.
+TILE_SIZE = 80 konstans használata.

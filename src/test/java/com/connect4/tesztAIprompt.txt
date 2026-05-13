@@ -1,0 +1,19 @@
+Írj nekem Java unit teszteket JUnit 5-tel egy Connect4 Minimax AI-hoz.
+A csomag legyen com.connect4.ai. Kelleni fog a Board és a Player a com.connect4.model csomagból.
+A setUp-ban csinálj egy 4-es mélységű AI-t és egy 6x7-es táblát.
+Két tesztet kérek:
+testFindImmediateWin: A pirosnak van már 3 korongja a 0. oszlopban, az AI-nak oda kell tennie a negyediket.
+testBlockOpponentWin: A sárgának van 3 korongja az 1. oszlopban, az AI-nak (pirosként) ezt blokkolnia kell.
+Tiszta kódot kérek, statikus importokkal.
+
+-------------
+Írj JUnit 5 teszteket a com.connect4.model.Board osztályhoz.
+A setUp-ban csinálj egy 6x7-es táblát.
+Ezeket a teszteket kérem:
+testInitialBoardIsEmpty: Ellenőrizd, hogy az összes cella üres (Player.NONE) kezdéskor.
+testMakeMove: Rakj egy pirosat a 0. oszlopba. Ellenőrizd, hogy az alsó sorba került-e és tényleg piros-e.
+testColumnFull: Tölts meg egy oszlopot pirossal. Ellenőrizd, hogy utána a isValidMove hamisat ad-e, és nem lehet-e többet oda rakni.
+testHorizontalWin: Rakj 4 pirosat egymás mellé és ellenőrizd a győzelmet.
+testVerticalWin: Rakj 4 sárgát egymás fölé és ellenőrizd a győzelmet.
+testDiagonalWin1: Építs fel egy átlós győzelmet (bal lentről jobb fentre) pirossal, sárga korongokat használva alátámasztásnak.
+testDynamicSize: Teszteld, hogy egy kisebb (pl. 4x5-ös) tábla is jól működik-e.
