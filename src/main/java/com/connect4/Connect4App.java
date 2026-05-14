@@ -67,11 +67,10 @@ public class Connect4App extends Application {
         updateDBStatus();
     }
 
-    private VBox createControlPanel(Stage stage) {
+    private ScrollPane createControlPanel(Stage stage) {
         VBox panel = new VBox(10);
         panel.setPadding(new Insets(15));
-        panel.setStyle("-fx-background-color: #f4f4f4; -fx-border-color: #ccc; -fx-border-width: 0 0 0 1;");
-        panel.setPrefWidth(260);
+        panel.setStyle("-fx-background-color: #f4f4f4;");
 
         Label title = new Label("Vezérlőpult");
         title.setStyle("-fx-font-size: 18px; -fx-font-weight: bold;");
@@ -164,7 +163,14 @@ public class Connect4App extends Application {
                 newGameBtn, saveBtn, loadBtn, playAIBtn, statsBtn
         );
 
-        return panel;
+        ScrollPane scrollPane = new ScrollPane(panel);
+        scrollPane.setFitToWidth(true);
+        scrollPane.setPrefWidth(280);
+        scrollPane.setStyle("-fx-background-color: #f4f4f4; -fx-border-color: #ccc; -fx-border-width: 0 0 0 1; -fx-background: #f4f4f4;");
+        scrollPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
+        scrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+
+        return scrollPane;
     }
 
     private void showStatistics() {
